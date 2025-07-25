@@ -21,16 +21,7 @@ dist=240 #all the centres of whose we are seeing distance are in the same level(
 BOARD_ROWS = 3
 BOARD_COLS = 3
 
-# rgb: red green blue
-# RED = (255, 0, 0)
-# BG_COLOR = (28, 170, 156)
-# LINE_COLOR = (23, 145, 135)
-# CIRCLE_COLOR = (239, 231, 200)
-# CROSS_COLOR = (66, 66, 66)
-
-# ------
-# IMAGES,FONTS
-# ------
+#image
 def image_loader(path,width,height):
     img=pygame.image.load(path)
     img=pygame.transform.scale(img,(width,height))
@@ -49,22 +40,16 @@ font1 =pygame.font.Font('freesansbold.ttf',20)
 font2=pygame.font.Font('freesansbold.ttf',42)
 gui_font = pygame.font.Font(None, 30)
 
-# ------
-# SCREEN
-# ------
+#display
 screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
 pygame.display.set_caption( 'BaaghChal' )
 
-# -------------
-# CONSOLE BOARD
-# -------------
+#board
 board = [[  0  ,  0  ,  0  ],
          [  0  ,  0  ,  0  ],
          [  0  ,  0  ,  0  ]]
 
-# ---------
-# FUNCTIONS
-# ---------
+#required functions
 def click_valid(x,y):
     row,col=None,None
     for row in range(3):
@@ -204,9 +189,6 @@ def restart():
     valid=False
     wrong_select=False 
 
-# ---------
-# VARIABLES
-# ---------
 player = 1
 game_over = False
 selected=False
@@ -217,9 +199,7 @@ played=0
 eraser_won_times=0
 sharpner_won_times=0
 
-# ---------
-# GUI
-# ---------
+#GUI
 class Button:
     def __init__(self,text,width,height,pos,elevation):
         #Core attributes
@@ -317,8 +297,6 @@ def tutorial_scene(screen,on_tutorial_scene=True):
         pygame.display.update()
         on_tutorial_scene = button5.not_running
 
-########################################################################################################################
-
 def about_scene(screen,on_about_scene=True):
     about=pygame.image.load('assets/about.png')
     button5=Button('Back', 100, 40, (530 , 640), 5)
@@ -330,8 +308,6 @@ def about_scene(screen,on_about_scene=True):
                 sys.exit()
         pygame.display.update()
         on_about_scene = button5.not_running
-
-########################################################################################################################
 
 def win_scene(screen,player):
     global played,eraser_won_times,sharpner_won_times
@@ -382,9 +358,7 @@ def win_scene(screen,player):
                 sys.exit()
         pygame.display.update()
 
-# --------
-# MAINLOOP
-# --------
+#main
 start_scene(screen)
 while True:
     screen.blit(game_board, (0, 0))
