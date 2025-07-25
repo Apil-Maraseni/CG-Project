@@ -22,11 +22,11 @@ BOARD_ROWS = 3
 BOARD_COLS = 3
 
 # rgb: red green blue
-RED = (255, 0, 0)
-BG_COLOR = (28, 170, 156)
-LINE_COLOR = (23, 145, 135)
-CIRCLE_COLOR = (239, 231, 200)
-CROSS_COLOR = (66, 66, 66)
+# RED = (255, 0, 0)
+# BG_COLOR = (28, 170, 156)
+# LINE_COLOR = (23, 145, 135)
+# CIRCLE_COLOR = (239, 231, 200)
+# CROSS_COLOR = (66, 66, 66)
 
 # ------
 # IMAGES,FONTS
@@ -53,7 +53,7 @@ gui_font = pygame.font.Font(None, 30)
 # SCREEN
 # ------
 screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
-pygame.display.set_caption( '3 Men Morris' )
+pygame.display.set_caption( 'BaaghChal' )
 
 # -------------
 # CONSOLE BOARD
@@ -232,7 +232,6 @@ class Button:
         # top rectangle
         self.top_rect = pygame.Rect(pos,(width,height))
         self.top_color = '#475F77'
-
         # bottom rectangle
         self.bottom_rect = pygame.Rect(pos,(width,height))
         self.bottom_color = '#354B5E'
@@ -350,8 +349,8 @@ def win_scene(screen,player):
         msg2=f"{'Eraser' if eraser_won_times<sharpner_won_times else 'Sharpner' } You suck!!!!!!!!!!!!!!!!!!!!!!!!!"
 
     button2 = Button('Continue!', 300, 40, ((WIDTH / 2) - 150, (HEIGHT/2)+80), 5)
-    button3 = Button('Play again (For true gamers)', 300, 40, (30, (HEIGHT/2)+80), 5)
-    button4=  Button('Exit (If you are a loser)', 300, 40, (360, (HEIGHT/2)+80), 5)
+    button3 = Button('Play again (Why Not?)', 300, 40, (30, (HEIGHT/2)+80), 5)
+    button4=  Button('Exit (Are You Sure?)', 300, 40, (360, (HEIGHT/2)+80), 5)
     while win:
         screen.fill((255,255,255))
         if played<3:

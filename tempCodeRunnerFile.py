@@ -1,1 +1,0 @@
-about=image_loader('photos/about.png',90,90)
